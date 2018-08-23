@@ -1,2 +1,2 @@
 # BioLum
-Mesh network lighting project for Raspberry Pi
+Wearable, mesh-networked lighting project for Raspberry Pi
