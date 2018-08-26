@@ -1,9 +1,9 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-openjdk
 
 RUN apt-get update && \
-    apt-get install git bluez
+    apt-get install -y git bluez
 
-RUN git clone git@github.com:intel-iot-devkit/tinyb.git && \
+RUN git clone https://github.com/intel-iot-devkit/tinyb.git && \
     cd tinyb && \
     mkdir build && \
     cd build && \
