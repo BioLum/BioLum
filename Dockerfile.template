@@ -1,7 +1,12 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-openjdk
 
-RUN apt-get update && \
-    apt-get install -y \
-    git bluez build-essential cmake pkg-config libglib2.0-dev
+RUN apt-get update
+RUN apt-get install -y git
+RUN apt-get install -y bluez
+RUN apt-get install -y build-essential
+RUN apt-get install -y cmake
+RUN apt-get install -y pkg-config
+RUN apt-get install -y libglib2.0-dev
+RUN apt-get install -y doxygen
 
 CMD ["sleep", "30m"]
