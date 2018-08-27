@@ -3,3 +3,5 @@ FROM resin/%%RESIN_MACHINE_NAME%%-openjdk
 RUN apt-get update && \
     apt-get install -y \
     git bluez build-essential cmake pkg-config libglib2.0-dev
+
+CMD ["sleep", "30m"]
