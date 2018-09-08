@@ -9,14 +9,17 @@ RUN apt-get install -y pkg-config
 RUN apt-get install -y libglib2.0-dev
 RUN apt-get install -y doxygen
 
-RUN mkdir app && \
-    cd app && \
+RUN mkdir /app && \
+    cd /app && \
     git clone https://github.com/intel-iot-devkit/tinyb.git && \
     cd tinyb && \
     mkdir build && \
     cd build && \
     cmake .. && \
     make && \
-    make install
+    make install && \
+    rm -rf /app/tinyb
 
-CMD ["sleep", "30m"]
+COPY build/libs/BioLum.jar /app/BioLum.jar
+
+CMD ["java", "-jar", "/app/BioLum.jar"]
