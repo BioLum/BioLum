@@ -17,9 +17,6 @@ RUN mkdir /app && \
     cd build && \
     cmake .. && \
     make && \
-    make install && \
-    rm -rf /app/tinyb
+    make install
 
-COPY build/libs/BioLum.jar /app/BioLum.jar
-
-CMD ["java", "-jar", "/app/BioLum.jar"]
+CMD ["sleep", "30m"]
