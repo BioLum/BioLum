@@ -5,6 +5,7 @@ RUN mkdir /app
 RUN apt-get update
 RUN apt-get install -y git
 RUN apt-get install -y libdbus-1-dev
+RUN apt-get install -y libudev-dev
 RUN apt-get install -y build-essential
 RUN apt-get install -y cmake
 RUN apt-get install -y pkg-config
