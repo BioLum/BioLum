@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-openjdk
+FROM resin/raspberry-pi-openjdk
 
 RUN apt-get update
 RUN apt-get install -y git
