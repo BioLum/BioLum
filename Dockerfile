@@ -27,7 +27,8 @@ RUN cd /app && \
     cp ./src/bluetoothd /usr/local/bin/ && \
     hash -r && \
     echo "/usr/local/bin/bluetoothd --experimental &" >> /etc/rc.local && \
-    rm -rf /app/bluez-5.43.tar.gz
+    rm -rf /app/bluez-5.43.tar.gz && \
+    rm -rf bluez-5.43
 
 RUN cd /app && \
     git clone https://github.com/intel-iot-devkit/tinyb.git && \
