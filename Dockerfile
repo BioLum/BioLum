@@ -9,7 +9,6 @@ RUN apt-get install -y libudev-dev
 RUN apt-get install -y libical-dev
 RUN apt-get install -y libreadline-dev
 RUN apt-get install -y build-essential
-RUN apt-get install -y cmake
 RUN apt-get install -y pkg-config
 RUN apt-get install -y libglib2.0-dev
 RUN apt-get install -y doxygen
@@ -30,6 +29,17 @@ RUN cd /app && \
     rm -rf /app/bluez-5.43.tar.gz && \
     rm -rf bluez-5.43
 
+# Install cmake
+RUN cd /app && \
+    wget http://www.cmake.org/files/v3.6/cmake-3.6.2.tar.gz && \
+    tar xvf cmake-3.6.2.tar.gz && \
+    cd cmake-3.6.2 && \
+    ./configure && \
+    make && \
+    make install && \
+    hash -r
+
+# Install tinyb
 RUN cd /app && \
     git clone https://github.com/intel-iot-devkit/tinyb.git && \
     cd tinyb && \
