@@ -33,6 +33,9 @@ export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 Now, tinyb should work fine.
 
+Adding support for the `--experimental` flag is on the resin.io team's roadmap, see
+https://forums.resin.io/t/rpi3-running-bluetoothd-with-experimental-flag/2566/23.
+
 ### Resin local mode
 
 1. Install the resin cli: `npm install resin-cli -g --production --unsafe-perm`.
