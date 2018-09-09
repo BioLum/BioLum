@@ -26,7 +26,6 @@ RUN cd /app && \
     cp attrib/gatttool /usr/bin/ && \
     cp ./src/bluetoothd /usr/local/bin/ && \
     hash -r && \
-    echo "/usr/local/bin/bluetoothd --experimental &" >> /etc/rc.local && \
     rm -rf /app/bluez-5.43.tar.gz && \
     rm -rf bluez-5.43
 
@@ -39,5 +38,8 @@ RUN cd /app && \
     cmake -DBUILDJAVA=ON .. && \
     make && \
     make install
+
+WORKDIR /app
+ENV DBUS_SYSTEM_BUS_ADDRESS unix:path=/host/run/dbus/system_bus_socket
 
 CMD ["sleep", "30m"]
