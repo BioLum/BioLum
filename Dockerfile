@@ -4,6 +4,7 @@ RUN mkdir /app
 
 RUN apt-get update
 RUN apt-get install -y git
+RUN apt-get install -y cmake
 RUN apt-get install -y libdbus-1-dev
 RUN apt-get install -y libudev-dev
 RUN apt-get install -y libical-dev
@@ -28,16 +29,6 @@ RUN cd /app && \
     echo "/usr/local/bin/bluetoothd --experimental &" >> /etc/rc.local && \
     rm -rf /app/bluez-5.43.tar.gz && \
     rm -rf bluez-5.43
-
-# Install cmake
-RUN cd /app && \
-    wget http://www.cmake.org/files/v3.6/cmake-3.6.2.tar.gz && \
-    tar xvf cmake-3.6.2.tar.gz && \
-    cd cmake-3.6.2 && \
-    ./configure && \
-    make && \
-    make install && \
-    hash -r
 
 # Install tinyb
 RUN cd /app && \
