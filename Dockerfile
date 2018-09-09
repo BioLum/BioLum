@@ -35,7 +35,7 @@ RUN cd /app && \
     cd tinyb && \
     mkdir build && \
     cd build && \
-    cmake .. && \
+    cmake -DBUILDJAVA=ON .. && \
     make && \
     make install
 
